@@ -9,7 +9,15 @@ from torch.utils.data import DataLoader
 from models import Net
 from torchvision import transforms
 from torchvision.datasets import CIFAR10
+from torchvision.models import vgg16
 from getdata import get_training_set, get_test_set
+
+#extract image feature maps
+myvgg = vgg16(pretrained=True)
+
+def extractfeatures(input):
+    input = torch.cat((input, input, input), 1)
+    return myvgg.features[:-3](input)
 
 # Training settings
 parser = argparse.ArgumentParser(description='PyTorch Super Res Example')
@@ -82,8 +90,13 @@ def train(epoch):
         input = batch_img[0].to(device)
         target = batch_target[0].to(device)
 
+        img_feat = extractfeatures(input)
+        target_feat = extractfeatures(input)
+
+        features_loss = criterion(img_feat, target_feat)
+
         optimizer.zero_grad()
-        loss = criterion(model(input), target)
+        loss = criterion(model(input), target) + features_loss
         epoch_loss += loss.item()
         loss.backward()
         optimizer.step()
