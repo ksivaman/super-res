@@ -4,7 +4,7 @@ from six.moves import urllib
 import tarfile
 from torchvision.transforms import Compose, CenterCrop, ToTensor, Resize
 
-from dataset import DatasetFromFolder
+from datasets import DatasetFromFolder
 
 
 def download_bsd300(dest="dataset"):
