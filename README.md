@@ -1,6 +1,10 @@
-# super-res
+# Super Resolution
 A simple implementation of perpetual losses for super resolution (https://arxiv.org/pdf/1603.08155.pdf)
 
+#Usage for one image
+> python test.py --input_image /path/to/img.jpg --model checkpoints/model_namel.pth --output_filename sample.jpg
+
+#Results
 
 <figure>
   <figcaption>Low resolution starting image</figcaption>
