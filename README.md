@@ -5,7 +5,7 @@ for image inpainting.
 # Usage for one image
 > python test.py --input_image /path/to/img.jpg --model checkpoints/model_namel.pth --output_filename sample.jpg
 
-# Results
+# Results: Super-Resolution
 
 <figure>
   <figcaption>Low resolution starting image</figcaption>
@@ -15,4 +15,16 @@ for image inpainting.
 <figure>
   <figcaption>High resolution upsampled image</figcaption>
   <img src="car_high.jpg" width="400">
+</figure>
+
+# Results: Inpainting
+
+<figure>
+  <figcaption>Before</figcaption>
+  <img src="UWVvX1563374711.jpg.jpg" width="400">
+</figure>
+
+<figure>
+  <figcaption>After</figcaption>
+  <img src="inpaint2.jpg" width="400">
 </figure>
