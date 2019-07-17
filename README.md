@@ -21,7 +21,7 @@ for image inpainting.
 
 <figure>
   <figcaption>Before</figcaption>
-  <img src="UWVvX1563374711.jpg.jpg" width="400">
+  <img src="UWVvX1563374711.jpg" width="400">
 </figure>
 
 <figure>
